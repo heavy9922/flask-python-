@@ -2,10 +2,18 @@
 <html>
   <head>
     <title>mi sitio web- {% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
   </head>
   <body>
-    {% block content %}
+    <nav>
+      <ul>
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('hello')}}">hello</a></li>
+        <li><a href="{{url_for('code',code ='print(hola)')}}">code</a></li>
+      </ul>
+    </nav>
+    {% block content %}{% endblock %}
 
-    {% endblock %}
+    <script src="{{url_for('static', filename = 'js/main.js')}}" ></script>
   </body>
 </html>
