@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block title %} pagina de inicio {% endblock %}
+{%block content %}
+
+<h1>Bienvenido a mi sitio web</h1>
+{% if name %}
+<p>Hola, {{name | upper}}</p>
+{% else %}
+<p>hola, desconocido</p>
+{% endif %}
+
+<h2>lista de amigos</h2>
+<ul>
+  {%for friend in friends | reverse %}
+  <li>{{friend}}</li>
+  {% endfor %}
+</ul>
+
+<p>la fecha de hoy es: {{date | today}}</p>
+<p>la fecha de hoy es: {{ repeat('pan ', 10) | upper}}</p>
+
+
+{% endblock %}
