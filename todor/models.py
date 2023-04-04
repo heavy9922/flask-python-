@@ -16,8 +16,7 @@ class Users(db.Model):
 
 class Todo(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    create_by = db.Column(
-        db.Integer, db.ForeignKey('users.id'), nullable=False)
+    create_by = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
     title = db.Column(db.String(100), nullable=False)
     desc = db.Column(db.Text)
     state = db.Column(db.Boolean, default=False)
