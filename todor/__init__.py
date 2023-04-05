@@ -20,10 +20,10 @@ def create_app():
     # register blueprint
 
     # Registrar Bluprint
-    from . import auth
     from . import todo
     app.register_blueprint(todo.bp)
 
+    from . import auth
     app.register_blueprint(auth.bp)
 
     @app.route('/')
